@@ -67,28 +67,12 @@ const get_date_str = (date) => {
         return 'Invalid Date Format';
     }
 }
-const get_date_time_obj = (date) => {
-        if(date){
-            return moment(date);
-        }
-        else{
-            return moment(new Date());
-        }
-}
 const get_date_time_pretty = (date) => {
         if(date){
             return prettydate.format(new Date(date));
         }
         else{
             return null;
-        }
-}
-const get_iso_str_by_date_time = (date,time) =>{
-        if(date){
-            return moment(date+ ' ' + time).toISOString();
-        }
-        else{
-            return moment().toISOString();
         }
 }
 const get_slug = (str) => {
@@ -99,24 +83,8 @@ const get_slug = (str) => {
             .replace(/ /g,'-')
             .replace(/[^\w-]+/g,'');
 }
-const remove_money = (n) => {
-        if(!n){
-            n='0';
-        }
-        return String(n).replace('$','');
-}
-const get_money = (n) => {
-        var n = parseFloat(n);
-        if(!n || isNaN(n)){
-            n = 0;
-        }
-        return "$" + n.toFixed(2).replace(/\d(?=(\d{3})+\.)/g, "$&,");
-}
 const get_currency = (amount) => {
         return Math.round(100 * parseFloat(typeof amount === 'string' ? amount.replace(/[$,]/g, '') : amount));
-}
-const get_cents = (number) => {
-        return  parseInt((Number(number) * 100)).toString();
 }
 const get_contains = (value, searchFor) => {
         return (value || '').indexOf(searchFor) > -1;
@@ -147,14 +115,6 @@ const get_date_time_obj = (date) => {
             return moment(new Date());
         }
 }
-const get_date_time_pretty = (date) => {
-        if(date){
-            return prettydate.format(new Date(date));
-        }
-        else{
-            return null;
-        }
-}
 const get_iso_str_by_date_time = (date,time) => {
         if(date){
             return moment(date+ ' ' + time).toISOString();
@@ -163,14 +123,6 @@ const get_iso_str_by_date_time = (date,time) => {
             return moment().toISOString();
         }
 }
-const get_slug = (str) => {
-        if(!str)
-            return "";
-        return str
-            .toLowerCase()
-            .replace(/ /g,'-')
-            .replace(/[^\w-]+/g,'');
-    }
 const remove_money = (n) => {
         if(!n){
             n='0';
@@ -184,22 +136,8 @@ const get_money = (n) => {
         }
         return "$" + n.toFixed(2).replace(/\d(?=(\d{3})+\.)/g, "$&,");
 }
-const get_currency = (amount) => {
-        return Math.round(100 * parseFloat(typeof amount === 'string' ? amount.replace(/[$,]/g, '') : amount));
-}
 const get_cents = (number) => {
         return  parseInt((Number(number) * 100)).toString();
-}
-const get_contains = (value, searchFor) =>{
-        return (value || '').indexOf(searchFor) > -1;
-}
-const remove_html_str = (str) =>{
-        var regex = /(<([^>]+)>)/ig;
-        _data = "";
-        if(str){
-            _data = str.replace(regex, "");
-        }
-        return _data;
 }
 const get_month_title_short = (d) =>{
         switch(d) {
@@ -337,7 +275,7 @@ const set_resize_photo_file = (org_file,sizes,callback) => {
                         .toFile(size.path,(error,info)=>{
                             if(error){
                                 r_error=error;
-                                biz9.w('set_resize_photo_file',error);
+                                console.log('set_resize_photo_file');
                             }
                         });
                 }).then(function(x){
@@ -432,28 +370,19 @@ module.exports = {
     get_query,
     get_date_time_str,
     get_date_str,
-    get_time_str,
     get_data_time_obj,
     get_date_time_pretty,
     get_iso_str_by_date_time,
-    get_slug,
-    remove_money,
     get_money,
-    get_currency,
     get_cents,
     get_contains,
     remove_html_str,
     get_time_str,
     get_date_time_obj,
     get_date_time_pretty,
-    get_iso_str_by_date_time,
     get_slug,
     remove_money,
-    get_money,
     get_currency,
-    get_cents,
-    get_contains,
-    remove_html_str,
     get_month_title_short,
     get_month_title,
     text_truncate,
