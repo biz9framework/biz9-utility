@@ -395,14 +395,10 @@ const set_form_item_main = (data_type,id,item_data) =>{
         id=0;
     }
     let item = {data_type:data_type,id:id};
-    if(item_data['data_type']){
-        delete item_data['data_type'];
-    }
-    if(item_data['id']){
-        delete item_data['id'];
-    }
     for (key in  item_data) {
-        item[key] = String(item_data[key]).trim();
+        if(key !='data_type' && key !='id'){
+            item[key] = String(item_data[key]).trim();
+        }
     }
     return item;
 }
