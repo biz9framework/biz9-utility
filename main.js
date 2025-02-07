@@ -388,15 +388,21 @@ const set_file_upload_main = (req,_file_path) => {
     });
 }
 const set_form_item_main = (data_type,id,item_data) =>{
+    if(!id){
+        id='0';
+    }
     if(!data_type){
         data_type='dt_none';
     }
-    if(!id){
-        id=0;
-    }
     let item = {data_type:data_type,id:id};
-    for (key in  item_data) {
-        if(key !='data_type' && key !='id'){
+    if(item_data){
+        if(item_data.id) {
+            delete item_data['id'];
+        }
+        if(item_data.data_type) {
+            delete item_data['data_type'];
+        }
+        for (key in  item_data) {
             item[key] = String(item_data[key]).trim();
         }
     }
