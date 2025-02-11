@@ -394,18 +394,14 @@ const set_form_item_main = (data_type,id,item_data) =>{
     if(!data_type){
         data_type='dt_none';
     }
-    let item = {data_type:data_type,id:id};
+    let item = {};
     if(item_data){
-        if(item_data.id) {
-            delete item_data['id'];
-        }
-        if(item_data.data_type) {
-            delete item_data['data_type'];
-        }
         for (key in  item_data) {
             item[key] = String(item_data[key]).trim();
         }
     }
+    item.data_type=data_type;
+    item.id=id;
     return item;
 }
 const error_append_main = (org_error,new_error) => {
