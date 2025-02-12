@@ -415,6 +415,12 @@ const error_append_main = (org_error,new_error) => {
     return org_error;
 }
 const get_test_item_main = (data_type,id) => {
+    if(!data_type){
+        data_type='dt_blank';
+    }
+    if(!id){
+        id=0;
+    }
     let _id=get_id_main(9999);
     let item_test = {data_type:data_type,id:id};
     item_test.title='title_'+_id;
