@@ -1,3 +1,10 @@
+/*
+Copyright 2019 BiZ9 Framework
+Author: biz9framework@gmail.com (BiZ9 Framework LLC)
+License GNU General Public License v3.0
+Description: BiZ9 Framework: Test
+*/
+
 const series = require('async-series');
 const moment = require('moment');
 const { w,w_error,get_test_item,error_append,get_id,get_guid,get_title_url,get_date_time_str,get_date_str, get_date_time_pretty} = require('.');

@@ -1,9 +1,9 @@
-/* Copyright (C) 2017 9_OPZ #Certified CoderZ
- * GNU GENERAL PUBLIC LICENSE
- * Full LICENSE file ( gpl-3.0-licence.txt )
- * BiZ9 Framework
- * Utility-Main
- */
+/*
+Copyright 2019 BiZ9 Framework
+Author: biz9framework@gmail.com (BiZ9 Framework LLC)
+License GNU General Public License v3.0
+Description: BiZ9 Framework: Utility - Main
+*/
 const moment = require('moment');
 const prettydate = require('pretty-date');
 

@@ -1,6 +1,6 @@
 /*
-Copyright 2023 Certified CoderZ
-Author: certifiedcoderz@gmail.com (Certified CoderZ)
+Copyright 2019 BiZ9 Framework
+Author: biz9framework@gmail.com (BiZ9 Framework LLC)
 License GNU General Public License v3.0
 Description: BiZ9 Framework: Utility
 */
