@@ -31,11 +31,6 @@ class Guid {
         return get_guid_main();
     };
 }
-class Item {
-    static get_title_url = (title) => {
-        return get_title_url_main(title);
-    };
-}
 class DateTime {
     static get_str = (datatime) => {
         return get_date_time_str_main(datatime);

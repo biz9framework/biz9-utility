@@ -66,12 +66,6 @@ const get_test_item_main = (data_type,id) => {
     item_test.group_id=_id;
     return item_test;
 }
-const get_title_url_main = (title) => {
-    if(!title){
-        title='';
-    }
-    return title.replace(/[^a-z0-9]+/ig, "_").toLowerCase();
-}
 const get_date_time_str_main = (datetime) => {
     //Tuesday, February 14th 2023, at 2:39 am
     return String(moment(datetime).format("dddd MMMM Do, YYYY h:mm a"));
@@ -291,7 +285,6 @@ module.exports = {
     get_id_main,
     message_append_main,
     get_test_item_main,
-    get_title_url_main,
     get_date_time_str_main,
     get_date_str_main,
     get_date_time_pretty_main,
