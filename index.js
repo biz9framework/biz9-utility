@@ -38,6 +38,9 @@ class DateTime {
     static get_date_str = (date) => {
         return get_date_str_main(date);
     };
+    static get_time_str = (date) => {
+        return get_time_str_main(date);
+    };
     static get_pretty = (date) => {
         return get_date_time_pretty_main(date);
     };
