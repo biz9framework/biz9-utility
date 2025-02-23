@@ -44,6 +44,9 @@ class DateTime {
     static get_obj = (date) => {
         return get_date_time_obj_main(date);
     };
+    static get_month_title = (date) => {
+        return get_month_title_main(date);
+    };
 }
 module.exports = {
     Log,
