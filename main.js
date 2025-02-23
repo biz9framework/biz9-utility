@@ -257,7 +257,6 @@ const get_paging_list_main = (data_list,current_page,page_size) => {
         callback([new_data_list,item_count,page_count]);
     });
 }
-
 const get_older_date_main = (date_1, date_2) =>{
     if(date_1.getTime() < date_2.getTime()){
         return 'date1';
