@@ -23,7 +23,7 @@ class Test {
         return get_test_item_main(data_type,id);
     };
 }
-class Guid {
+class Number {
     static get_id = (max) => {
         return get_id_main(max);
     };
@@ -53,7 +53,7 @@ class DateTime {
 }
 module.exports = {
     Log,
-    Guid,
+    Number,
     Test,
     DateTime,
 };
