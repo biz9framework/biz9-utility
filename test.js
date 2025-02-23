@@ -73,7 +73,7 @@ describe("connect", () => {
                 let data_type = 'dt_blank';
                 let test_item = Test.get_item(id,data_type);
                 console.log(test_item);
-                console.log('W-GET-TEST-ITEM-SUCCERSS');
+                console.log('W-GET-TEST-ITEM-SUCCESS');
                 call()
             },
             function(call) {

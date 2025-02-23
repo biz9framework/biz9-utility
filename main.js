@@ -264,17 +264,14 @@ const get_older_date_main = (date_1, date_2) =>{
         return 'date2';
     }
 }
-const set_form_item_list_main = (data_type,item_list_data) =>{
-    if(!data_type){
-        data_type='dt_none';
-    }
-    for(let a=0;a<item_list_data.length;a++){
-        if(!item_list_data[a].id){
-            item_list_data[a].id='0';
+const set_form_item_list_main = (data_type,id,item_data) =>{
+        let item = {data_type:data_type,id:id};
+        for (key in  item_data) {
+            if(String(item_data[key]) != 'id' && String(item_data[key]) != 'data_type'){
+                item[key] = String(item_data[key]).trim();
+            }
         }
-        item_list_data[a].data_type = data_type;
-    }
-    return item_list_data;
+        return item;
 }
 
 module.exports = {
