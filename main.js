@@ -318,6 +318,6 @@ module.exports = {
     validate_email_main,
     get_paging_list_main,
     get_older_date_main,
-    set_form_item_main
+    set_form_item_main,
     set_form_item_list_main
 };

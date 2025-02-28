@@ -7,7 +7,6 @@ Description: BiZ9 Framework: Test
 
 const series = require('async-series');
 const moment = require('moment');
-//const { w,w_error,get_test_item,error_append,get_id,get_guid,get_title_url,get_date_time_str,get_date_str, get_date_time_pretty} = require('.');
 const {DateTime,Log,Test,Form }= require('.');
 
 /* --- TEST CONFIG START --- */
@@ -88,17 +87,26 @@ describe("connect", () => {
                 _error_append = Log.append(_error_append,error2);
                 console.log(_error_append);
                 console.log('ERROR-APPEND-SUCCESS');
-                //call()
+                call()
             },
-
             function(call) {
                 console.log('FORM-SET-ITEM-START');
-                let test_item =Test.get_item('dt_blank',0);
+                let test_item =Test.get_item('dt_blank',123);
                 console.log(Form.set_item('dt_blank',test_item));
                 console.log('FORM-SET-ITEM-SUCCESS');
                 call()
             },
-
+            function(call) {
+                console.log('FORM-SET-ITEM-LIST-START');
+                let test_item_list = [];
+                let test_item_1 =Test.get_item('dt_blank',123);
+                test_item_list.push(Test.get_item('dt_blank',0));
+                test_item_list.push(Test.get_item('dt_blank',0));
+                test_item_list.push(Test.get_item('dt_blank',0));
+                console.log(Form.set_item_list('dt_blank',test_item_list));
+                console.log('FORM-SET-ITEM-LIST-SUCCESS');
+                call()
+            },
 
 
 

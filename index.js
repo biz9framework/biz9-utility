@@ -11,6 +11,9 @@ class Form{
     static set_item = (data_type,item_list_data) => {
         return set_form_item_list_main(data_type,item_list_data);
     };
+    static set_item_list = (data_type,item_list_data) => {
+        return set_form_item_list_main(data_type,item_list_data);
+    };
 }
 class Log{
     static w = (title,str) => {
