@@ -41,12 +41,16 @@ const w_main = (title,str) => {
     console.log('PRINT__'+String(title).toUpperCase()+ '___END_____________________');
 }
 const message_append_main = (message,new_message) => {
+    let append = false;
     if(new_message){
         if(!message){
             message='';
+            append=true;
         }
-        new_message = ' message: ' + new_message + ",";
-        message = message + new_message
+        if(append){
+            new_message = ' message: ' + new_message + ",";
+            message = message + new_message
+        }
     }
     return message;
 }

@@ -79,13 +79,16 @@ describe("connect", () => {
             function(call) {
                 console.log('ERROR-APPEND-START');
                 let error = 'error1';
-                let error2 = 'error2';
+                //let error2 = 'error2';
+                //let error = '';
+                let error2 = null;
+
                 let _error_append = null;
                 _error_append = Log.append(_error_append,error);
                 _error_append = Log.append(_error_append,error2);
                 console.log(_error_append);
                 console.log('ERROR-APPEND-SUCCESS');
-                call()
+                //call()
             },
 
             function(call) {
