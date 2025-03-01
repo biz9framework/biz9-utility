@@ -268,14 +268,11 @@ const get_older_date_main = (date_1, date_2) =>{
         return 'date2';
     }
 }
-const set_form_item_list_main = (data_type,id,item_data) =>{
-        let item = {data_type:data_type,id:id};
-        for (key in  item_data) {
-            if(String(item_data[key]) != 'id' && String(item_data[key]) != 'data_type'){
-                item[key] = String(item_data[key]).trim();
-            }
+const set_form_item_list_main = (data_type,item_list_data) =>{
+        for (a=0;a<item_list_data.length;a++){
+            item_list_data['data_type']=data_type;
         }
-        return item;
+        return item_list_data;
 }
 const set_form_item_main = (data_type,id,item_data) =>{
     if(!data_type){
