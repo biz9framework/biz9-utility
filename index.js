@@ -8,8 +8,8 @@ const {w_main,error_main,get_guid_main,get_id_main,message_append_main,get_test_
     get_date_time_str_main,get_date_str_main,get_date_time_pretty_main, get_currency_main, get_contains_main,remove_html_str_main,get_time_str_main,get_date_time_obj_main,get_iso_str_by_date_time_main,remove_money_main,get_money_main,get_cents_main,get_month_title_short_main,get_month_title_main,text_truncate_main,validate_email_main,get_paging_list_main,get_older_date_main,set_form_item_main,set_form_item_list_main} = require('./main');
 
 class Form{
-    static set_item = (data_type,item_list_data) => {
-        return set_form_item_list_main(data_type,item_list_data);
+    static set_item = (data_type,id,item_data) => {
+        return set_form_item_main(data_type,id,item_data);
     };
     static set_item_list = (data_type,item_list_data) => {
         return set_form_item_list_main(data_type,item_list_data);

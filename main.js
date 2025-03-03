@@ -283,7 +283,7 @@ const set_form_item_main = (data_type,id,item_data) =>{
     }
         var item = {};
         for (key in  item_data) {
-            item[key] = item_data[key].trim();
+            item[key] = String(item_data[key]).trim();
         }
         item['id'] = id;
         item['data_type'] = data_type;

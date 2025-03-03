@@ -91,8 +91,10 @@ describe("connect", () => {
             },
             function(call) {
                 console.log('FORM-SET-ITEM-START');
-                let test_item =Test.get_item('dt_blank',123);
-                console.log(Form.set_item('dt_blank',test_item));
+                let data_type ='dt_blank';
+                let id = '0';
+                let test_item =Test.get_item(data_type,id);
+                console.log(Form.set_item(data_type,id,test_item));
                 console.log('FORM-SET-ITEM-SUCCESS');
                 call()
             },
