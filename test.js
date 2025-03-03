@@ -109,9 +109,13 @@ describe("connect", () => {
                 console.log('FORM-SET-ITEM-LIST-SUCCESS');
                 call()
             },
-
-
-
+            function(call) {
+                console.log('FORM-NEW-DATE-START');
+                let test_date =DateTime.get_new_date();
+                console.log(test_date);
+                console.log('FORM-NEW-DATE-SUCCESS');
+                call()
+            },
             function(call) {
                 // never happens, because "second thing"
                 // passed an error to the done() callback
