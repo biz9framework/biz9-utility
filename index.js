@@ -46,9 +46,10 @@ class Str {
     static get_guid = () => {
         return get_guid_main();
     };
+    static check_is_null = (str) => {
+        return check_is_null_main(str);
+    };
 }
-
-
 class DateTime {
     static get_new_date = () => {
         return get_new_date_main();
