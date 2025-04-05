@@ -300,13 +300,12 @@ const get_title_main = (str) =>{
   );
 }
 const check_is_null_main = (str) =>{
-    if(str === undefined){
+    if(str === undefined || str == 0 || str == '0' || str == null){
         return true;
     }else{
         return false;
     }
 }
-
 module.exports = {
     w_main,
     error_main,
