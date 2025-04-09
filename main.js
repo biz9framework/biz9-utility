@@ -299,6 +299,12 @@ const get_title_main = (str) =>{
     text => text.charAt(0).toUpperCase() + text.substring(1).toLowerCase()
   );
 }
+const get_title_url_main = (title) => {
+    if(!title){
+        title='';
+    }
+    return title.replace(/[^a-z0-9]+/ig, "_").toLowerCase();
+}
 const check_is_null_main = (str) =>{
     if(str === undefined || str == 0 || str == '0' || str == null){
         return true;
@@ -336,4 +342,5 @@ module.exports = {
     set_form_item_list_main,
     get_title_main,
     check_is_null_main,
+    get_title_url_main
 };
