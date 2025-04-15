@@ -82,7 +82,7 @@ class DateTime {
 module.exports = {
     Log,
     Number,
-    STR,
+    Str,
     Form,
     Test,
     DateTime,
