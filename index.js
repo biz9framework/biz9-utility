@@ -38,6 +38,9 @@ class Number {
     static get_guid = () => {
         return get_guid_main();
     };
+    static get_money = (n) => {
+        return get_money_main(n);
+    };
 }
 class Str {
     static get_title = (str) => {
@@ -79,7 +82,7 @@ class DateTime {
 module.exports = {
     Log,
     Number,
-    Str,
+    STR,
     Form,
     Test,
     DateTime,
