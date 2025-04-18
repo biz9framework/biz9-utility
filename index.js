@@ -55,6 +55,13 @@ class Str {
     static get_title_url = (title) => {
         return get_title_url_main(title);
     };
+    static get_truncate = (str,max) => {
+        if (str.length > max) {
+            return str.substring(0, max) + "...";
+        } else {
+            return str;
+        }
+    };
 }
 class DateTime {
     static get_new_date = () => {
