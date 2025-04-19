@@ -7,6 +7,15 @@ Description: BiZ9 Framework: Utility - Main
 const moment = require('moment');
 const prettydate = require('pretty-date');
 
+const get_full_date_by_date_time_main = (date,time) => {
+        return moment(date+ " " + time, 'YYYY-MM-DD h:mm').format("dddd MMMM Do, YYYY");
+}
+const get_full_time_by_date_time_main = (date,time) => {
+        return moment(date+ " " + time, 'YYYY-MM-DD h:mm').format("h:mm a");
+}
+const get_full_date_time_by_date_time_main = (date,time) => {
+        return moment(date+ " " + time, 'YYYY-MM-DD h:mm').format("dddd MMMM Do, YYYY h:mm a");
+}
 const get_guid_main = () => {
     return 'xxxxxxxx-xxxx-4xxx-yxxx-xxxxxxxxxxxx'.replace(/[xy]/g, function(c) {
         let r = Math.random() * 16 | 0, v = c == 'x' ? r : (r & 0x3 | 0x8);
