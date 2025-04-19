@@ -129,7 +129,6 @@ const get_money_main = (_n) => {
 const get_cents_main = (number) => {
     return  parseInt((Number(number) * 100)).toString();
 }
-
 const remove_html_str_main = (str) => {
     let regex = /(<([^>]+)>)/ig;
     let _data = "";
