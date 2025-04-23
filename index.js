@@ -64,6 +64,9 @@ class Str {
             return str;
         }
     };
+    static validate_email = (email) => {
+        return validate_email_main(email);
+    };
 }
 class DateTime {
     static get_new_date = () => {
