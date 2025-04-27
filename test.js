@@ -7,7 +7,7 @@ Description: BiZ9 Framework: Test
 
 const series = require('async-series');
 const moment = require('moment');
-const {DateTime,Log,Test,Form,Str }= require('.');
+const {DateTime,Log,Test,Form,Str} = require('.');
 
 
 /* --- TEST CONFIG START --- */
@@ -33,7 +33,6 @@ describe("connect", () => {
                 console.log('GET-DATETIME-END');
                 //call()
             },
-
             function(call) {
                 console.log('GET-TITLE-URL');
                 console.log(Str.get_title_url('Apple Butter Sauce'));
