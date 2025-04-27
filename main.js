@@ -57,7 +57,7 @@ const message_append_main = (message,new_message) => {
             append=true;
         }
         if(append){
-            new_message = ' message: ' + new_message + ",";
+            new_message = ' ' + new_message + ",";
             message = message + new_message
         }
     }
