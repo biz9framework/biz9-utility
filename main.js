@@ -314,8 +314,14 @@ const get_title_url_main = (title) => {
     return title.replace(/[^a-z0-9]+/ig, "_").toLowerCase();
 }
 const check_is_null_main = (str) =>{
+    console.log('aaaaaa');
+    if(!str){
+        str='';
+    }
     if(str === undefined || str == 0 || str == '0' || str == null){
         return true;
+    }else if(String(str) =='null'){
+       return true;
     }else{
         return false;
     }

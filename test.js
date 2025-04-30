@@ -22,6 +22,13 @@ describe("connect", () => {
                 call()
             },
             function(call) {
+                console.log('CHECK-IS-NULL-START');
+                console.log(Str.check_is_null('null'));
+                console.log('CHECK-IS-NULL-END');
+                //call()
+            },
+
+            function(call) {
                 console.log('GET-DATETIME-START');
                 const now = new Date();
                 event_list = [
