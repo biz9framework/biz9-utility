@@ -72,6 +72,9 @@ class Str {
     static validate_email = (email) => {
         return validate_email_main(email);
     };
+    static get_photo = (photo_data) => {
+        return photo_data = photo_data ? photo_data : "no_img.jpg";
+    };
 }
 
 class DateTime {

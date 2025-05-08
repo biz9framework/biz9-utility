@@ -22,6 +22,12 @@ describe("connect", () => {
                 call()
             },
             function(call) {
+                console.log('GET-PHOTO-START');
+                console.log(Str.get_photo("butter"));
+                console.log('GET-PHOTO-END');
+                //call()
+            },
+            function(call) {
                 console.log('GET-DISCOUNT-START');
                 console.log(Number.get_discount(10,5));
                 console.log('GET-DISCOUNT-END');
