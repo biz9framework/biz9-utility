@@ -7,7 +7,7 @@ Description: BiZ9 Framework: Test
 
 const series = require('async-series');
 const moment = require('moment');
-const {DateTime,Log,Test,Form,Str} = require('.');
+const {Number,DateTime,Log,Test,Form,Str} = require('.');
 
 
 /* --- TEST CONFIG START --- */
@@ -21,6 +21,14 @@ describe("connect", () => {
                 console.log('CONNECT-START');
                 call()
             },
+            function(call) {
+                console.log('GET-DISCOUNT-START');
+                console.log(Number.get_discount(10,5));
+                console.log('GET-DISCOUNT-END');
+                //call()
+            },
+
+
             function(call) {
                 console.log('CHECK-IS-NULL-START');
                 console.log(Str.check_is_null('null'));
