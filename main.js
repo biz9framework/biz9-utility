@@ -109,7 +109,7 @@ const get_date_short_str_main=(date)=>{
     if(date){
         let date_obj=get_date_time_obj_main(date);
         let month=get_month_title_short_main(date_obj.month());
-        let day=date_obj.day();
+        let day=date_obj.date();
         let year=date_obj.year();
         return day+"-"+month+"-"+year;
     }
