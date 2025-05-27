@@ -21,6 +21,13 @@ describe("connect", () => {
                 console.log('CONNECT-START');
                 call()
             },
+            function(call) {
+                console.log('GET-DISCOUNT-START');
+                console.log(Number.get_discount('a','b'));
+                console.log('GET-DISCOUNT-END');
+                call()
+            },
+
 
             function(call) {
                 console.log('GET-DATETIME-START');
@@ -41,13 +48,6 @@ describe("connect", () => {
                 console.log('GET-PHOTO-END');
                 //call()
             },
-            function(call) {
-                console.log('GET-DISCOUNT-START');
-                console.log(Number.get_discount(10,5));
-                console.log('GET-DISCOUNT-END');
-                //call()
-            },
-
 
             function(call) {
                 console.log('CHECK-IS-NULL-START');

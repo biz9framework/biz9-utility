@@ -14,7 +14,11 @@ const get_discount_main=(old_cost,now_cost)=>{
             now_cost=parseFloat(0.00);
         }
         let discount = old_cost - now_cost;
-        return String(parseInt(((discount / old_cost) * 100))) + "%";
+        let r_discount  = String(parseInt(((discount / old_cost) * 100))) + "%";
+        if(isNaN(r_discount)){
+            r_discount=parseFloat(0.00) + "%";
+        }
+        return r_discount;
 }
 const get_full_date_by_date_time_main=(date,time)=>{
         return moment(date+ " " + time, 'YYYY-MM-DD h:mm').format("dddd MMMM Do, YYYY");
