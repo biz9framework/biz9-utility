@@ -23,6 +23,16 @@ const get_discount_main=(old_cost,now_cost)=>{
 const get_full_date_by_date_time_main=(date,time)=>{
         return moment(date+ " " + time, 'YYYY-MM-DD h:mm').format("dddd MMMM Do, YYYY");
 }
+const get_capital_first_letter_main=(str)=>{
+  const words = str.split(' ');
+  const capitalizedWords = words.map(word => {
+    if (word.length === 0) {
+      return '';
+    }
+    return word.charAt(0).toUpperCase() + word.slice(1);
+  });
+  return capitalizedWords.join(' ');
+}
 const get_full_time_by_date_time_main=(date,time)=>{
         return moment(date+ " " + time, 'YYYY-MM-DD h:mm').format("h:mm a");
 }
@@ -390,5 +400,6 @@ module.exports = {
     get_full_time_by_date_time_main,
     get_full_date_time_by_date_time_main,
     get_discount_main,
-    get_date_short_str_main
+    get_date_short_str_main,
+    get_capital_first_letter_main
 };

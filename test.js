@@ -22,13 +22,17 @@ describe("connect", () => {
                 call()
             },
             function(call) {
+                console.log('GET-CAMEL-CASE-START');
+                console.log(Str.get_capital_first_letter("apple pie"));
+                console.log('GET-CAMEL-CASE-END');
+                //call()
+            },
+            function(call) {
                 console.log('GET-DISCOUNT-START');
                 console.log(Number.get_discount('a','b'));
                 console.log('GET-DISCOUNT-END');
                 call()
             },
-
-
             function(call) {
                 console.log('GET-DATETIME-START');
                 const now = new Date();
