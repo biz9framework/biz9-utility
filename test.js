@@ -22,6 +22,13 @@ describe("connect", () => {
                 call()
             },
             function(call) {
+                console.log('REMOVE-WHITESPACE-START');
+                console.log(Str.get_remove_whitespace("apple pie ddd d d d "));
+                console.log('REMOVE-WHITESPACE-START');
+                //call()
+            },
+
+            function(call) {
                 console.log('GET-CAMEL-CASE-START');
                 console.log(Str.get_capital_first_letter("apple pie"));
                 console.log('GET-CAMEL-CASE-END');

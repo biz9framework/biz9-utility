@@ -72,6 +72,12 @@ class Str {
     static get_capital_first_letter = (str) => {
         return  get_capital_first_letter_main(str);
     };
+    static get_remove_whitespace = (str) => {
+        if(check_is_null_main(str)){
+            str="";
+        }
+        return str.replace(/\s+/g, '');
+    };
 }
 class DateTime {
     static get_new_date = () => {
