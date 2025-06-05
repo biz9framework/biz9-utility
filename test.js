@@ -21,6 +21,14 @@ describe("connect", () => {
                 console.log('CONNECT-START');
                 call()
             },
+             function(call) {
+                console.log('CHECK-IS-NULL-START');
+                console.log(Number.check_is_guid("c39e0791-a5c6-4582-ad20-aa3c5028d3d5"));
+                console.log('CHECK-IS-NULL-END');
+                //call()
+            },
+
+
             function(call) {
                 console.log('REMOVE-WHITESPACE-START');
                 console.log(Str.get_remove_whitespace("apple pie ddd d d d "));

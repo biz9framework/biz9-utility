@@ -20,6 +20,10 @@ const get_discount_main=(old_cost,now_cost)=>{
         }
         return r_discount;
 }
+const check_is_guid_main=(str)=>{
+    const guidRegex = /^[0-9a-fA-F]{8}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{12}$/;
+        return guidRegex.test(str);
+}
 const get_full_date_by_date_time_main=(date,time)=>{
         return moment(date+ " " + time, 'YYYY-MM-DD h:mm').format("dddd MMMM Do, YYYY");
 }
@@ -401,5 +405,6 @@ module.exports = {
     get_full_date_time_by_date_time_main,
     get_discount_main,
     get_date_short_str_main,
-    get_capital_first_letter_main
+    get_capital_first_letter_main,
+    check_is_guid_main
 };
