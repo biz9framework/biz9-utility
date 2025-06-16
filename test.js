@@ -22,9 +22,15 @@ describe("connect", () => {
                 call()
             },
              function(call) {
-                console.log('CHECK-IS-NULL-START');
-                console.log(Number.check_is_guid("c39e0791-a5c6-4582-ad20-aa3c5028d3d5"));
-                console.log('CHECK-IS-NULL-END');
+                console.log('NUMBER-START');
+                console.log(Number.get_id(3));
+                console.log('NUMBER-END');
+
+                //console.log('CHECK-IS-NULL-END');
+
+                //console.log('CHECK-IS-NULL-START');
+                //console.log(Number.check_is_guid("c39e0791-a5c6-4582-ad20-aa3c5028d3d5"));
+                //console.log('CHECK-IS-NULL-END');
                 //call()
             },
 
