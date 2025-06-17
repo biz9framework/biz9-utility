@@ -339,7 +339,7 @@ const get_title_url_main=(title)=>{
     if(!title){
         title='';
     }
-    return title.replace(/[^a-z0-9]+/ig, "_").toLowerCase();
+    return String(title).replace(/[^a-z0-9]+/ig, "_").toLowerCase();
 }
 const check_is_null_main=(str)=>{
     if(!str){
