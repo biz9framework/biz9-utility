@@ -29,7 +29,7 @@ const get_full_date_by_date_time_main=(date,time)=>{
 }
 const get_capital_first_letter_main=(str)=>{
     if(check_is_null_main(str)){
-        str = "":
+        str = "";
     }
   const words = str.split(' ');
   const capitalizedWords = words.map(word => {
