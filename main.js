@@ -28,6 +28,9 @@ const get_full_date_by_date_time_main=(date,time)=>{
         return moment(date+ " " + time, 'YYYY-MM-DD h:mm').format("dddd MMMM Do, YYYY");
 }
 const get_capital_first_letter_main=(str)=>{
+    if(check_is_null_main(str)){
+        str = "":
+    }
   const words = str.split(' ');
   const capitalizedWords = words.map(word => {
     if (word.length === 0) {
