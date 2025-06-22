@@ -48,7 +48,16 @@ class Number {
 }
 class Obj {
     static check_is_empty = (obj) => {
-      return Object.keys(obj).length === 0 && obj.constructor === Object;
+        let is_null = false;
+        if(!obj){
+            obj = {};
+        }
+      let check_obj =  Object.keys(obj).length === 0 && obj.constructor === Object;
+        is_null = check_obj;
+        if(check_obj === null){
+            is_null = true;
+        }
+        return is_null;
     };
 }
 class Str {

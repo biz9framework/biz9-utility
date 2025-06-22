@@ -23,7 +23,8 @@ describe("connect", () => {
             },
              function(call) {
                 //console.log('CHECK-IS-EMPTY-START');
-                console.log(Obj.check_is_empty({}));
+                 let apple = 'aaa';
+                console.log(Obj.check_is_empty(apple));
                 //console.log('CHECK-IS-EMPTY-END');
 
                 //console.log('NUMBER-START');
