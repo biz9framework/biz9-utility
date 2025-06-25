@@ -21,6 +21,19 @@ describe("connect", () => {
                 console.log('CONNECT-START');
                 call()
             },
+            function(call) {
+                console.log('GET-DATETIME-START');
+                const now = new Date();
+                //let date_here = DateTime.get_date_short_str_date(now);
+                Log.w('get_date_short_str_date',DateTime.get_date_str(now));
+
+                //let date_here = DateTime.get_date_short_str_date(now);
+                //Log.w('get_date_short_str_date',date_here);
+                console.log('GET-DATETIME-END');
+                //call()
+            },
+
+
              function(call) {
                 //console.log('CHECK-IS-EMPTY-START');
                  let apple = 'aaa';
@@ -59,18 +72,6 @@ describe("connect", () => {
                 console.log('GET-DISCOUNT-END');
                 call()
             },
-            function(call) {
-                console.log('GET-DATETIME-START');
-                const now = new Date();
-                //let date_here = DateTime.get_date_short_str_date(now);
-                Log.w('get_date_short_str_date',DateTime.get_date_short_str(now));
-
-                //let date_here = DateTime.get_date_short_str_date(now);
-                //Log.w('get_date_short_str_date',date_here);
-                console.log('GET-DATETIME-END');
-                //call()
-            },
-
 
             function(call) {
                 console.log('GET-PHOTO-START');
