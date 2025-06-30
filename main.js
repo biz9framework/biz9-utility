@@ -53,11 +53,14 @@ const get_guid_main=()=>{
     });
 }
 const get_id_main=(max)=>{
+    console.log('aaaaaa');
     if(!max){
         max = 99999;
     }
-    let r=Math.floor(Math.random()*max);
-    return r;
+    console.log('bbbbbb');
+    // Example: numbers from 0 up to (but not including) 10
+    console.log('cccccc');
+    return parseInt(Math.random() * max);
 }
 const error_main=(title,str)=>{
     if(!str){

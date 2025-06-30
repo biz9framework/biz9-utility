@@ -22,26 +22,26 @@ describe("connect", () => {
                 call()
             },
             function(call) {
-                console.log('GET-DATETIME-START');
-                const now = new Date();
-                //let date_here = DateTime.get_date_short_str_date(now);
-                Log.w('get_date_short_str_date',DateTime.get_date_str(now));
+                //console.log('GET-DATETIME-START');
+                //const now = new Date();
+                ////let date_here = DateTime.get_date_short_str_date(now);
+                //Log.w('get_date_short_str_date',DateTime.get_date_str(now));
 
                 //let date_here = DateTime.get_date_short_str_date(now);
                 //Log.w('get_date_short_str_date',date_here);
-                console.log('GET-DATETIME-END');
-                //call()
+                //console.log('GET-DATETIME-END');
+                call()
             },
 
 
              function(call) {
                 //console.log('CHECK-IS-EMPTY-START');
-                 let apple = 'aaa';
-                console.log(Obj.check_is_empty(apple));
+                 //let apple = 'aaa';
+                //console.log(Obj.check_is_empty(apple));
                 //console.log('CHECK-IS-EMPTY-END');
 
                 //console.log('NUMBER-START');
-                //console.log(Number.get_id(3));
+                console.log(Number.get_id(2));
                 //console.log('NUMBER-END');
 
                 //console.log('CHECK-IS-NULL-END');
