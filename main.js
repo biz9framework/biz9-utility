@@ -346,14 +346,20 @@ const get_title_url_main=(title)=>{
 }
 const check_is_null_main=(str)=>{
     if(!str){
-        str='';
+        //str='';
+        return true;
     }
+    else if(str.length==0){
+        return true;
+    }
+    else{
     if(str === undefined || str == 0 || str == '0' || str == null){
         return true;
     }else if(String(str) =='null'){
        return true;
     }else{
         return false;
+    }
     }
 }
 module.exports = {
