@@ -97,13 +97,13 @@ class DateTime {
     static get_new_date = () => {
         return get_new_date_main();
     };
-    static get_str = (datatime) => {
+    static get = (datatime) => {
         return get_date_time_str_main(datatime);
     };
-    static get_date_str = (date) => {
+    static get_date = (date) => {
         return get_date_str_main(date);
     };
-    static get_time_str = (date) => {
+    static get_time = (date) => {
         return get_time_str_main(date);
     };
     static get_pretty = (date) => {
@@ -124,7 +124,7 @@ class DateTime {
     static get_full_date_time_by_date_time = (date,time) => {
         return get_full_date_time_by_date_time_main(date,time);
     };
-    static get_date_short_str = (date) => {
+    static get_date_short = (date) => {
         return get_date_short_str_main(date);
     };
 }
