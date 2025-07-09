@@ -345,19 +345,26 @@ const get_title_url_main=(title)=>{
     return String(title).replace(/[^a-z0-9]+/ig, "_").toLowerCase();
 }
 const check_is_null_main=(str)=>{
+    console.log('111111111111');
+    console.log(str);
     if(!str){
+        console.log('222222222');
         //str='';
         return true;
     }
     else if(str.length==0){
+        console.log('33333333');
         return true;
     }
     else{
+        console.log('44444444');
     if(str === undefined || str == 0 || str == '0' || str == null){
         return true;
     }else if(String(str) =='null'){
+        console.log('55555555');
        return true;
     }else{
+        console.log('66666666');
         return false;
     }
     }
