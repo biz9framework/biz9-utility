@@ -346,7 +346,7 @@ const get_title_url_main=(title)=>{
 }
 const check_is_null_main=(str)=>{
     console.log('111111111111');
-    console.log('17:23');
+    console.log('17:29');
     console.log(str);
     console.log(str.length);
     console.log(String(str));
@@ -393,6 +393,7 @@ const check_is_null_main=(str)=>{
        return true;
     }
 
+    console.log('sssssssssssssshit');
     return false;
 }
 module.exports = {
