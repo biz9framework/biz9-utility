@@ -367,6 +367,13 @@ const check_is_null_main=(str)=>{
         console.log('coool');
         return true;
     }
+    if (String(str) == 'undefined') {
+        console.log('weried');
+        return true;
+    }else{
+        console.log('crrrr');
+    }
+
     if (String(str) == undefined || String(str) == 'undefined') {
         console.log('fuck');
         return true;
