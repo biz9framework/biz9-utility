@@ -349,10 +349,15 @@ const check_is_null_main=(str)=>{
     console.log(str);
     if(!str){
         console.log('222222222');
-        //str='';
         return true;
     }
-    else if(str.length==0){
+    else if (typeof str === 'undefined') {
+        console.log('heeeeeeeeeeee');
+        return true;
+    }
+    else if(str === null){
+        return true;
+    }else if(str.length==0){
         console.log('33333333');
         return true;
     }
