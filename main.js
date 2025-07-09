@@ -345,65 +345,38 @@ const get_title_url_main=(title)=>{
     return String(title).replace(/[^a-z0-9]+/ig, "_").toLowerCase();
 }
 const check_is_null_main=(str)=>{
-    console.log('111111111111');
-    console.log('17:52');
-    console.log(str);
-    console.log(str.length);
-    console.log(String(str));
-    console.log('2222222222222');
     if(!str){
-        console.log('333333333333');
         return true;
     }
-    console.log('4444444444444444');
-    if(str == null || str.length === 0){
-      console.log('apple');
+    else if(str == null || str.length === 0){
         return true;
     }
-    console.log('555555555555');
-    if (typeof str === 'undefined') {
-        console.log('heeeeeeeeeeee');
+    else if(typeof str === 'undefined') {
         return true;
     }
-    console.log('666666666666');
-    if (str === undefined) {
-        console.log('coool');
+    else if(str === undefined) {
         return true;
     }
-    console.log('7777777777777');
-    if (String(str) == 'undefined') {
-        console.log('weried');
-        return true;
-    }else{
-        console.log('crrrr');
-    }
-    console.log('8888888888888888');
-
-    if (String(str) == undefined || String(str) == 'undefined') {
-        console.log('fuck');
+    else if(String(str) == 'undefined') {
         return true;
     }
-    console.log('99999999999999');
-    if(str === null){
+    else if(String(str) == undefined || String(str) == 'undefined') {
         return true;
     }
-    console.log('1000000000000');
-    if(str.length==0){
-        console.log('33333333');
+    else if(str === null){
         return true;
     }
-    console.log('111111111111111111');
-    if(str === undefined || str == 0 || str == '0' || str == null){
+    else if(str.length==0){
         return true;
     }
-    console.log('1222222222222222');
-    if(String(str) =='null'){
-        console.log('55555555');
+    else if(str === undefined || str == 0 || str == '0' || str == null){
+        return true;
+    }
+    else if(String(str) =='null'){
        return true;
-    }
-
-    console.log('sssssssssssssshit');
+    }else{
     return false;
+    }
 }
 module.exports = {
     w_main,
