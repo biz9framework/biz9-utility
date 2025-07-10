@@ -344,11 +344,15 @@ const get_title_url_main=(title)=>{
     }
     return String(title).replace(/[^a-z0-9]+/ig, "_").toLowerCase();
 }
+const check_is_base64_main=(str)=>{
+     const base64RegExp = /^(?:[A-Za-z0-9+/]{4})*(?:[A-Za-z0-9+/]{2}==|[A-Za-z0-9+/]{3}=|[A-Za-z0-9+/]{4})$/;
+  return base64RegExp.test(str);
+}
 const check_is_null_main=(str)=>{
     if(!str){
         return true;
     }
-    else if(str == null || str.length === 0){
+    else if(str == null){
         return true;
     }
     else if(typeof str === 'undefined') {
@@ -360,16 +364,16 @@ const check_is_null_main=(str)=>{
     else if(String(str) == 'undefined') {
         return true;
     }
-    else if(String(str) == undefined || String(str) == 'undefined') {
+    else if(String(str) == undefined) {
         return true;
     }
-    else if(str === null){
+    else if(str.length === 0){
         return true;
     }
     else if(str.length==0){
         return true;
     }
-    else if(str === undefined || str == 0 || str == '0' || str == null){
+    else if(str === undefined || str == 0 || str == '0'){
         return true;
     }
     else if(String(str) =='null'){
@@ -407,6 +411,7 @@ module.exports = {
     set_form_item_list_main,
     get_title_main,
     check_is_null_main,
+    check_is_base64_main,
     get_title_url_main,
     get_full_date_by_date_time_main,
     get_full_time_by_date_time_main,

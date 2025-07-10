@@ -40,8 +40,11 @@ describe("connect", () => {
                 //console.log(Obj.check_is_empty(apple));
                 //console.log('CHECK-IS-EMPTY-END');
 
+                console.log('BASE64-START');
+                console.log('BASE64-END');
+
                 //console.log('NUMBER-START');
-                console.log(Number.get_id(2));
+                //console.log(Number.get_id(2));
                 //console.log('NUMBER-END');
 
                 //console.log('CHECK-IS-NULL-END');
