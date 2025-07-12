@@ -330,6 +330,14 @@ const set_form_item_main=(data_type,id,item_data)=>{
     }
     item['id']=id;
     item['data_type']=data_type;
+    if(!option){
+        option = {};
+    }
+    if(option){
+        for (const key in option) {
+            item[key] = option[key];
+        }
+    }
     return item;
 }
 const get_title_main=(str)=>{
