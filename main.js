@@ -317,7 +317,7 @@ const set_form_item_list_main=(data_type,item_list_data)=>{
     }
     return item_list_data;
 }
-const set_form_item_main=(data_type,id,item_data)=>{
+const set_form_item_main=(data_type,id,item_data,option)=>{
     if(!data_type){
         data_type='dt_blank';
     }
