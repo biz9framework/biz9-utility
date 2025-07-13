@@ -56,8 +56,8 @@ const get_id_main=(max)=>{
     if(!max){
         max = 99999;
     }
-    // Example: numbers from 0 up to (but not including) 10
-    return parseInt(Math.random() * max);
+    min = 0;
+    return Math.floor(Math.random() * (max - min)) + min;
 }
 const error_main=(title,str)=>{
     if(!str){
