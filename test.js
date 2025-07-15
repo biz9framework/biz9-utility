@@ -44,7 +44,8 @@ describe("connect", () => {
                 //console.log('BASE64-END');
 
                 //console.log('NUMBER-START');
-                console.log(Number.get_id(6));
+                //console.log(Number.get_id(6));
+                console.log(Number.get_cent(50));
                 //console.log('NUMBER-END');
 
                 //console.log('CHECK-IS-NULL-END');

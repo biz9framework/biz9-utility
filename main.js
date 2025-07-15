@@ -153,7 +153,7 @@ const get_money_main=(_n)=>{
     }
     return "$"+n.toFixed(2).replace(/\d(?=(\d{3})+\.)/g, "$&,");
 }
-const get_cents_main=(number)=>{
+const get_cent_main=(number)=>{
     return  parseInt((Number(number)*100)).toString();
 }
 const remove_html_str_main = (str)=>{
@@ -408,7 +408,7 @@ module.exports = {
     get_iso_str_by_date_time_main,
     remove_money_main,
     get_money_main,
-    get_cents_main,
+    get_cent_main,
     get_month_title_short_main,
     get_month_title_main,
     text_truncate_main,
