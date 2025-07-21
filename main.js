@@ -156,6 +156,9 @@ const get_money_main=(_n)=>{
 const get_cent_main=(number)=>{
     return  parseInt((Number(number)*100)).toString();
 }
+const get_decimal_main=(n,decimal)=>{
+    return parseFloat(n).toFixed(decimal);
+}
 const remove_html_str_main = (str)=>{
     let regex = /(<([^>]+)>)/ig;
     let _data = "";
@@ -427,5 +430,6 @@ module.exports = {
     get_discount_main,
     get_date_short_str_main,
     get_capital_first_letter_main,
+    get_decimal_main,
     check_is_guid_main
 };
