@@ -29,7 +29,7 @@ class Test {
         return get_test_item_main(data_type,id);
     };
 }
-class Number {
+class Num {
     static get_id = (max) => {
         return get_id_main(max);
     };
@@ -145,7 +145,7 @@ class DateTime {
 }
 module.exports = {
     Log,
-    Number,
+    Num,
     Str,
     Obj,
     Form,
