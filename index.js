@@ -79,6 +79,14 @@ class Str {
     static check_is_null = (str) => {
         return check_is_null_main(str);
     };
+    static check_is_true = (str) => {
+        if(Str.check_is_null(str)){
+            return false;
+        }else{
+            const lowerStr = str.toLowerCase();
+            return lowerStr === "true" || lowerStr === "yes" || lowerStr === "on" || lowerStr === "1";
+        }
+    };
     static get_title_url = (title) => {
         return get_title_url_main(title);
     };

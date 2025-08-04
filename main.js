@@ -67,17 +67,17 @@ const error_main=(title,str)=>{
     if(!str){
         str='error null';
     }
-    console.log('ERROR___' +String(title).toUpperCase()+ '___START__________________');
-    console.log(str);
-    console.log('ERROR___' +String(title).toUpperCase()+ '___END_____________________');
+    console.error(String(title).toUpperCase()+ '___START__________________');
+    console.error(str);
+    console.error(String(title).toUpperCase()+ '___END_____________________');
 }
 const w_main=(title,str)=>{
     if(!str){
         str='null';
     }
-    console.log('PRINT__'+String(title).toUpperCase()+ '___START__________________');
+    console.log(String(title).toUpperCase()+ '___START__________________');
     console.log(str);
-    console.log('PRINT__'+String(title).toUpperCase()+ '___END_____________________');
+    console.log(String(title).toUpperCase()+ '___END_____________________');
 }
 const message_append_main=(message,new_message)=>{
     let append = false;
