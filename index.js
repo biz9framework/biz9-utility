@@ -83,7 +83,7 @@ class Str {
         if(Str.check_is_null(str)){
             return false;
         }else{
-            const lowerStr = String(str).toLowerCase();
+            const lowerStr = str.toString().toLowerCase();
             return lowerStr === "true" || lowerStr === "yes" || lowerStr === "on" || lowerStr === "1";
         }
     };
