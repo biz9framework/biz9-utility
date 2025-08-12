@@ -35,6 +35,10 @@ describe("connect", () => {
 
 
              function(call) {
+                console.log('GET-TITLE-START');
+                console.log(Str.get_title('1_3what',true));
+                console.log('GET-TITLE-START');
+
                 //console.log('CHECK-IS-EMPTY-START');
                  //let apple = 'aaa';
                 //console.log(Obj.check_is_empty(apple));
@@ -46,7 +50,7 @@ describe("connect", () => {
                 //console.log('NUMBER-START');
                 //console.log(Number.get_id(6));
                 //console.log(Number.get_cent(50));
-                console.log(Number.get_decimal(0.334444,1));
+                //console.log(Number.get_decimal(0.334444,1));
                 //console.log('NUMBER-END');
 
                 //console.log('CHECK-IS-NULL-END');

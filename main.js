@@ -343,7 +343,10 @@ const set_form_item_main=(data_type,id,item_data,option)=>{
     }
     return item;
 }
-const get_title_main=(str)=>{
+const get_title_main=(str,plural)=>{
+    if(plural){
+        str = str + "s";
+    }
   return str.replace(
     /\w\S*/g,
     text => text.charAt(0).toUpperCase() + text.substring(1).toLowerCase()

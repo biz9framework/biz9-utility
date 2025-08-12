@@ -73,8 +73,8 @@ class Obj {
     };
 }
 class Str {
-    static get_title = (str) => {
-        return get_title_main(str);
+    static get_title = (str,plural) => {
+        return get_title_main(str,plural);
     };
     static check_is_null = (str) => {
         return check_is_null_main(str);
