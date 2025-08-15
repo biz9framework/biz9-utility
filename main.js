@@ -7,44 +7,44 @@ Description: BiZ9 Framework: Utility - Main
 const moment = require('moment');
 const prettydate = require('pretty-date');
 const get_discount_main=(old_cost,now_cost)=>{
- if(isNaN(old_cost)){
-            old_cost=parseFloat(0.00);
-        }
-        if(isNaN(now_cost)){
-            now_cost=parseFloat(0.00);
-        }
-        let discount = old_cost - now_cost;
-        let r_discount  = String(parseInt(((discount / old_cost) * 100))) + "%";
-        if(isNaN(r_discount)){
-            r_discount=parseFloat(0.00) + "%";
-        }
-        return r_discount;
+    if(isNaN(old_cost)){
+        old_cost=parseFloat(0.00);
+    }
+    if(isNaN(now_cost)){
+        now_cost=parseFloat(0.00);
+    }
+    let discount = old_cost - now_cost;
+    let r_discount  = String(parseInt(((discount / old_cost) * 100))) + "%";
+    if(isNaN(r_discount)){
+        r_discount=parseFloat(0.00) + "%";
+    }
+    return r_discount;
 }
 const check_is_guid_main=(str)=>{
     const guidRegex = /^[0-9a-fA-F]{8}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{12}$/;
-        return guidRegex.test(str);
+    return guidRegex.test(str);
 }
 const get_full_date_by_date_time_main=(date,time)=>{
-        return moment(date+ " " + time, 'YYYY-MM-DD h:mm').format("dddd MMMM Do, YYYY");
+    return moment(date+ " " + time, 'YYYY-MM-DD h:mm').format("dddd MMMM Do, YYYY");
 }
 const get_capital_first_letter_main=(str)=>{
     if(check_is_null_main(str)){
         str = "";
     }
-  const words = str.split(' ');
-  const capitalizedWords = words.map(word => {
-    if (word.length === 0) {
-      return '';
-    }
-    return word.charAt(0).toUpperCase() + word.slice(1);
-  });
-  return capitalizedWords.join(' ');
+    const words = str.split(' ');
+    const capitalizedWords = words.map(word => {
+        if (word.length === 0) {
+            return '';
+        }
+        return word.charAt(0).toUpperCase() + word.slice(1);
+    });
+    return capitalizedWords.join(' ');
 }
 const get_full_time_by_date_time_main=(date,time)=>{
-        return moment(date+ " " + time, 'YYYY-MM-DD h:mm').format("h:mm a");
+    return moment(date+ " " + time, 'YYYY-MM-DD h:mm').format("h:mm a");
 }
 const get_full_date_time_by_date_time_main=(date,time)=>{
-        return moment(date+ " " + time, 'YYYY-MM-DD h:mm').format("dddd MMMM Do, YYYY h:mm a");
+    return moment(date+ " " + time, 'YYYY-MM-DD h:mm').format("dddd MMMM Do, YYYY h:mm a");
 }
 const get_guid_main=()=>{
     return 'xxxxxxxx-xxxx-4xxx-yxxx-xxxxxxxxxxxx'.replace(/[xy]/g, function(c) {
@@ -60,6 +60,19 @@ const get_id_main=(max)=>{
     return Math.floor(Math.random() * (max - min)) + min;
 }
 const error_main=(title,str)=>{
+    const now = new Date();
+    const formattedDateTimeLocale = now.toLocaleString('en-US', {
+        year: 'numeric',
+        month: '2-digit',
+        day: '2-digit',
+        hour: '2-digit',
+        minute: '2-digit',
+        second: '2-digit',
+        hour12: false
+    });
+    if(!str){
+        str='null';
+    }
     if(!str){
         str=title;
         title='';
@@ -67,17 +80,27 @@ const error_main=(title,str)=>{
     if(!str){
         str='error null';
     }
-    console.error(String(title).toUpperCase()+ '___START__________________');
+    console.error(String(title).toUpperCase()+ '___START__________________'+formattedDateTimeLocale);
     console.error(str);
-    console.error(String(title).toUpperCase()+ '___END_____________________');
+    console.error(String(title).toUpperCase()+ '___END_____________________'+formattedDateTimeLocale);
 }
 const w_main=(title,str)=>{
+    const now = new Date();
+    const formattedDateTimeLocale = now.toLocaleString('en-US', {
+        year: 'numeric',
+        month: '2-digit',
+        day: '2-digit',
+        hour: '2-digit',
+        minute: '2-digit',
+        second: '2-digit',
+        hour12: false
+    });
     if(!str){
         str='null';
     }
-    console.log(String(title).toUpperCase()+ '___START__________________');
+    console.log(String(title).toUpperCase()+ '___START__________________'+formattedDateTimeLocale);
     console.log(str);
-    console.log(String(title).toUpperCase()+ '___END_____________________');
+    console.log(String(title).toUpperCase()+ '___END_____________________'+formattedDateTimeLocale);
 }
 const message_append_main=(message,new_message)=>{
     let append = false;
@@ -347,10 +370,10 @@ const get_title_main=(str,plural)=>{
     if(plural){
         str = str + "s";
     }
-  return str.replace(
-    /\w\S*/g,
-    text => text.charAt(0).toUpperCase() + text.substring(1).toLowerCase()
-  );
+    return str.replace(
+        /\w\S*/g,
+        text => text.charAt(0).toUpperCase() + text.substring(1).toLowerCase()
+    );
 }
 const get_title_url_main=(title)=>{
     if(!title){
@@ -359,8 +382,8 @@ const get_title_url_main=(title)=>{
     return String(title).replace(/[^a-z0-9]+/ig, "_").toLowerCase();
 }
 const check_is_base64_main=(str)=>{
-     const base64RegExp = /^(?:[A-Za-z0-9+/]{4})*(?:[A-Za-z0-9+/]{2}==|[A-Za-z0-9+/]{3}=|[A-Za-z0-9+/]{4})$/;
-  return base64RegExp.test(str);
+    const base64RegExp = /^(?:[A-Za-z0-9+/]{4})*(?:[A-Za-z0-9+/]{2}==|[A-Za-z0-9+/]{3}=|[A-Za-z0-9+/]{4})$/;
+    return base64RegExp.test(str);
 }
 const check_is_null_main=(str)=>{
     if(!str){
@@ -391,9 +414,9 @@ const check_is_null_main=(str)=>{
         return true;
     }
     else if(String(str) =='null'){
-       return true;
+        return true;
     }else{
-    return false;
+        return false;
     }
 }
 module.exports = {

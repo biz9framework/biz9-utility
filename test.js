@@ -36,7 +36,7 @@ describe("connect", () => {
 
              function(call) {
                 console.log('GET-TITLE-START');
-                console.log(Str.get_title('1_3what',true));
+                 Log.w('cool_bean','apple');
                 console.log('GET-TITLE-START');
 
                 //console.log('CHECK-IS-EMPTY-START');
