@@ -56,7 +56,7 @@ const get_id_main=(max)=>{
     if(!max){
         max = 99999;
     }
-    min = 0;
+    let min = 0;
     return Math.floor(Math.random() * (max - min)) + min;
 }
 const error_main=(title,str)=>{
