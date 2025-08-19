@@ -317,6 +317,31 @@ const validate_email_main=(email)=>{
     const re = /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
     return re.test(String(email).toLowerCase());
 }
+const validate_password_main=(email)=>{
+     const minLength = 7;
+     const maxLength = 15;
+    // Check length
+    if (password.length < minLength || password.length > maxLength) {
+        return "Password must be between " + minLength + " and " + maxLength + " characters long.";
+    }
+    // Check for at least one uppercase letter
+    if (!/[A-Z]/.test(password)) {
+        return "Password must contain at least one uppercase letter.";
+    }
+    // Check for at least one lowercase letter
+    if (!/[a-z]/.test(password)) {
+        return "Password must contain at least one lowercase letter.";
+    }
+    // Check for at least one digit
+    if (!/\d/.test(password)) {
+        return "Password must contain at least one digit.";
+    }
+    // Check for at least one special character
+    if (!/[!@#$%^&*()]/.test(password)) { // You can expand this set of special characters
+        return "Password must contain at least one special character.";
+    }
+    return "Password is valid."; // All checks passed
+}
 const get_paging_list_main=(data_list,current_page,page_size)=>{
     return new Promise((callback)=>{
         let error=null;
@@ -442,6 +467,7 @@ module.exports = {
     get_month_title_main,
     text_truncate_main,
     validate_email_main,
+    validate_password_main,
     get_paging_list_main,
     get_older_date_main,
     set_form_item_main,
