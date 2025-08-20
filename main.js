@@ -340,7 +340,7 @@ const validate_password_main=(email)=>{
     if (!/[!@#$%^&*()]/.test(password)) { // You can expand this set of special characters
         return "Password must contain at least one special character.";
     }
-    return "Password is valid."; // All checks passed
+    return true; // All checks passed
 }
 const get_paging_list_main=(data_list,current_page,page_size)=>{
     return new Promise((callback)=>{
