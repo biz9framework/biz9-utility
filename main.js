@@ -317,7 +317,7 @@ const validate_email_main=(email)=>{
     const re = /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
     return re.test(String(email).toLowerCase());
 }
-const validate_password_main=(email)=>{
+const validate_password_main=(password)=>{
      const minLength = 7;
      const maxLength = 15;
     // Check length
