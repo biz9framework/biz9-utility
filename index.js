@@ -118,6 +118,9 @@ class Str {
     static check_is_base64 = (str) => {
         return check_is_base64_main(str);
     };
+    static get_money = (n) => {
+        return get_money_main(n);
+    };
 }
 class DateTime {
     static get_new_date = () => {
