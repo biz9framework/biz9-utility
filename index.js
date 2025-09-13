@@ -59,6 +59,9 @@ class Num {
     };
    }
 class Obj {
+    static merge = (obj1, obj2) => {
+        return {...obj1, ...obj2};
+    }
     static check_is_empty = (obj) => {
         let is_null = false;
         if(!obj){

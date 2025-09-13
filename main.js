@@ -392,6 +392,9 @@ const set_form_item_main=(data_type,id,item_data,option)=>{
     return item;
 }
 const get_title_main=(str,plural)=>{
+    if(!str){
+        str='';
+    }
     if(plural){
         str = str + "s";
     }
