@@ -447,6 +447,22 @@ const check_is_null_main=(str)=>{
         return false;
     }
 }
+function get_file_type_from_base64_main(base64Data) {
+      const regex = /^data:([a-zA-Z0-9]+\/[a-zA-Z0-9-.+]+)(;charset=[a-zA-Z0-9-]+)?(;base64)?,/;
+      const matches = base64Data.match(regex);
+
+      if (matches && matches.length >= 2) {
+        const mimeType = matches[1]; // e.g., "image/png"
+        const parts = mimeType.split('/');
+        if (parts.length === 2) {
+          const extension = parts[1]; // e.g., "png"
+          return { mimeType: mimeType, extension: extension };
+        }
+        return { mimeType: mimeType, extension: null };
+      }
+      return null; // Not a valid data URL or MIME type not found
+    }
+
 module.exports = {
     w_main,
     error_main,
@@ -486,5 +502,6 @@ module.exports = {
     get_date_short_str_main,
     get_capital_first_letter_main,
     get_decimal_main,
-    check_is_guid_main
+    check_is_guid_main,
+    get_file_type_from_base64_main
 };
