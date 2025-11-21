@@ -47,6 +47,16 @@ class Num {
     };
 }
 class Obj {
+    static sort_list_by_field = (item_list, sort_field,sort_type) => {
+        if(!sort_type){
+            sort_type='asc'; //asc, desc
+        }
+        if(sort_type=='asc'){
+            return item_list.sort((a, b) => a[sort_field].localeCompare(b[sort_field]));
+        }else{
+            return item_list.sort((a, b) => b[sort_field].localeCompare(a[sort_field]));
+        }
+    }
     static merge = (obj1, obj2) => {
         return {...obj1, ...obj2};
     }
@@ -61,6 +71,16 @@ class Obj {
             is_null = true;
         }
         return is_null;
+    };
+    static check_has_list = (obj) =>{
+        for (const key in obj) {
+            if (Object.prototype.hasOwnProperty.call(obj, key)) {
+                if (Array.isArray(obj[key])) {
+                    return true; // Found a property that is an array
+                }
+            }
+        }
+        return false; // No array property found
     };
 }
 class Str {
@@ -126,6 +146,13 @@ class Str {
     };
     static get_file_type_from_base64 = (base64) => {
         return get_file_type_from_base64_main(base64);
+    };
+    static check_if_str_exist = (src_str,val) => {
+	    function escapeRegExp(string) {
+     	    return string.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
+        }
+    	const regex = new RegExp(escapeRegExp(val), 'i');
+        return regex.test(src_str);
     };
 }
 class DateTime {
