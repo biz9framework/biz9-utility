@@ -154,6 +154,10 @@ class Str {
     	const regex = new RegExp(escapeRegExp(val), 'i');
         return regex.test(src_str);
     };
+    static check_is_image = (filename) =>{
+        const imageExtensions = /\.(jpg|jpeg|png|gif|bmp|webp|svg)$/i;
+        return imageExtensions.test(filename);
+    };
 }
 class DateTime {
     static get_new = () => {

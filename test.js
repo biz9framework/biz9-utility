@@ -36,7 +36,7 @@ describe("connect", () => {
 
              function(call) {
                 console.log('GET-TITLE-START');
-                 console.log(Str.get_title('user_role_super_admin'));
+                 console.log(Str.check_is_image('user_role_super_admin.png'));
                  //console.log(DateTime.get_new_date());
                 console.log('GET-TITLE-START');
 
