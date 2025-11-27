@@ -155,8 +155,14 @@ class Str {
         return regex.test(src_str);
     };
     static check_is_image = (filename) =>{
-        const imageExtensions = /\.(jpg|jpeg|png|gif|bmp|webp|svg)$/i;
-        return imageExtensions.test(filename);
+        let is_true = false;
+        const imageExtensions = /\.(jpg|jpeg|png|gif|bmp|webp|svg|svg+xml)$/i;
+        is_true =  imageExtensions.test(filename);
+        const regex = /svg\+xml/;
+        if(!is_true){
+            is_true = regex.test(filename);
+        }
+        return is_true;
     };
 }
 class DateTime {
