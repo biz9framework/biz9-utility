@@ -88,6 +88,9 @@ class Obj {
     static check_is_object(value) {
         return value === null || (typeof value !== 'object' && typeof value !== 'function');
     }
+    static check_is_value(value) {
+        return value !== Object(value);
+    }
 }
 class Str {
     static get_guid = () => {
