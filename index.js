@@ -82,6 +82,12 @@ class Obj {
         }
         return false; // No array property found
     };
+    static check_is_array = (obj) =>{
+        return Array.isArray(obj);
+    }
+    statyic check_is_object(value) {
+        return value === null || (typeof value !== 'object' && typeof value !== 'function');
+    }
 }
 class Str {
     static get_guid = () => {
