@@ -85,7 +85,7 @@ class Obj {
     static check_is_array = (obj) =>{
         return Array.isArray(obj);
     }
-    statyic check_is_object(value) {
+    static check_is_object(value) {
         return value === null || (typeof value !== 'object' && typeof value !== 'function');
     }
 }
