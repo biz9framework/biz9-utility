@@ -173,6 +173,11 @@ class Str {
         }
         return is_true;
     };
+    static check_has_alpha(str) {
+        // This regex will return true if it finds at least one alpha character
+        const alphaRegex = /[a-zA-Z]/;
+        return alphaRegex.test(str);
+    }
 }
 class DateTime {
     static get_new = () => {
