@@ -91,6 +91,11 @@ class Obj {
     static check_is_value(value) {
         return value !== Object(value);
     }
+    static get_distinct_list = (src_list, distinct_field) => {
+       return src_list.filter((obj, index, self) =>
+            index === self.findIndex((t) => t[distinct_field] === obj[distinct_field])
+        );
+    }
 }
 class Str {
     static get_guid = () => {
