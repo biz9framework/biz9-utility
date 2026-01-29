@@ -101,6 +101,9 @@ class Str {
     static get_guid = () => {
         return get_guid_main();
     };
+    static get_id = (max) => {
+        return String(get_id_main(max));
+    };
     static check_is_guid = (str) => {
         return check_is_guid_main(str);
     };
