@@ -1,6 +1,6 @@
 {
   "name": "biz9-utility",
-  "version": "4.4.26",
+  "version": "4.4.27",
   "description": "**The BiZ9-Utility Package**.",
   "main": "index.js",
   "scripts": {
