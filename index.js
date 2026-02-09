@@ -191,12 +191,9 @@ class Str {
 class DateTime {
     static get = (option) => {
         option = option ? option : {};
-        console.log('aaaaa');
         if(option.format){
-            console.log('bbbbb');
           return dayjs().format(option.format);
         }else{
-            console.log('cccc');
             return dayjs().toISOString();
         }
     };
@@ -219,6 +216,11 @@ class DateTime {
     };
     static get_day = (date_time,option) => {
         option = option ? option : {format:"dddd"};
+        return DateTime.get_date(date_time,{format:option.format});
+    };
+    static get_date_short = (date_time,option) => {
+        //25 May 2025
+        option = option ? option : {format:"D MMMM YYYY"};
         return DateTime.get_date(date_time,{format:option.format});
     };
     static get_obj = (date) => {
