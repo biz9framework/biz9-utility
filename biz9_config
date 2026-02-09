@@ -1,5 +1,5 @@
-VERSION='4.6.1'
+VERSION='4.6.2'
 TITLE='BiZ9-Utility'
 REPO='git@github.com:biz9framework/biz9-utility.git'
-BRANCH='4.5.8'
+BRANCH='4.6.2'
 HAS_MONGO_DB='false';
