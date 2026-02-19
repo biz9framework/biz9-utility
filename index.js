@@ -97,7 +97,11 @@ class Log{
 }
 class Num {
     static get_id = (max) => {
-        return get_id_main(max);
+        if(!max){
+            max = 99999;
+        }
+        let min = 0;
+        return Math.floor(Math.random() * (max - min)) + min;
     };
     static get_decimal = (n,decimal) => {
         if(!n){
@@ -298,7 +302,7 @@ class Str {
         return photo_data = photo_data ? photo_data : "no_img.jpg";
     };
     static get_capital_first_letter = (str) => {
-        if(check_is_null_main(str)){
+        if(Str.check_is_null(str)){
             str = "";
         }
         const words = str.split(' ');
@@ -311,7 +315,7 @@ class Str {
         return capitalizedWords.join(' ');
     };
     static get_remove_whitespace = (str) => {
-        if(check_is_null_main(str)){
+        if(Str.check_is_null(str)){
             str = "";
         }
         const words = str.split(' ');
