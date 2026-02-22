@@ -214,6 +214,12 @@ class Str {
         }
         return str.toLowerCase();
     };
+    static get_plural = (str) => {
+        if(!str){
+            str = '';
+        }
+        return str + "s";
+    };
     static check_is_null = (str) => {
         if(!str){
             return true;
