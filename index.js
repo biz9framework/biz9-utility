@@ -56,8 +56,8 @@ class Log{
         console.log(String(title).toUpperCase()+ '___END_____________________'+formattedDateTimeLocale);
     };
     static error = (title,str) => {
-        const now = new date();
-        const formatteddatetimelocale = now.tolocalestring('en-us', {
+        const now = new Date();
+        const formattedDateTimeLocale = now.toLocaleString('en-US', {
             year: 'numeric',
             month: '2-digit',
             day: '2-digit',
@@ -425,10 +425,10 @@ class DateTime {
     };
 }
 module.exports = {
+    DateTime,
+    Form,
     Log,
     Num,
-    Str,
     Obj,
-    Form,
-    DateTime,
+    Str,
 };
