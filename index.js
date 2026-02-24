@@ -1,6 +1,6 @@
 /*
-Copyright 2019 BiZ9 Framework
-Author: biz9framework@gmail.com (BiZ9 Framework LLC)
+Copyright 2016 Certified CoderZ
+Author: Brandon Poole Sr. (biz9framework@gmail.com)
 License GNU General Public License v3.0
 Description: BiZ9 Framework: Utility
 */
