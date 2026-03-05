@@ -38,34 +38,16 @@ class Form{
 }
 class Log{
     static w = (title,str) => {
-        const now = new Date();
-        const formattedDateTimeLocale = now.toLocaleString('en-US', {
-            year: 'numeric',
-            month: '2-digit',
-            day: '2-digit',
-            hour: '2-digit',
-            minute: '2-digit',
-            second: '2-digit',
-            hour12: false
-        });
+        let date_time = DateTime.get_date(DateTime.get(),{format:'D-MMMM-YYYY-h:mm a'});
         if(!str){
             str='null';
         }
-        console.log(String(title).toUpperCase()+ '___START__________________'+formattedDateTimeLocale);
+        console.log(String(title).toUpperCase()+ '___START__________________'+date_time);
         console.log(str);
-        console.log(String(title).toUpperCase()+ '___END_____________________'+formattedDateTimeLocale);
+        console.log(String(title).toUpperCase()+ '___END_____________________'+date_time);
     };
     static error = (title,str) => {
-        const now = new Date();
-        const formatteddatetimelocale = now.tolocalestring('en-us', {
-            year: 'numeric',
-            month: '2-digit',
-            day: '2-digit',
-            hour: '2-digit',
-            minute: '2-digit',
-            second: '2-digit',
-            hour12: false
-        });
+        let date_time = DateTime.get_date(DateTime.get(),{format:'D-MMMM-YYYY-h:mm a'});
         if(!str){
             str='null';
         }
@@ -76,9 +58,9 @@ class Log{
         if(!str){
             str='error null';
         }
-        console.error(String(title).toUpperCase()+ '___START__________________'+formattedDateTimeLocale);
+        console.error(String(title).toUpperCase()+ '___START__________________'+date_time);
         console.error(str);
-        console.error(String(title).toUpperCase()+ '___END_____________________'+formattedDateTimeLocale);
+        console.error(String(title).toUpperCase()+ '___END_____________________'+date_time);
     };
     static append = (message,new_message) => {
         let append = false;
