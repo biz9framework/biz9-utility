@@ -38,7 +38,7 @@ class Form{
 }
 class Log{
     static w = (title,str) => {
-        let date_time = DateTime.get_date(DateTime.get(),{format:'D-MMMM-YYYY-h:mm a'});
+        let date_time = DateTime.get_date(DateTime.get(),{format:'h:mm-a-D-MMMM-YYYY'});
         if(!str){
             str='null';
         }
@@ -47,7 +47,7 @@ class Log{
         console.log(String(title).toUpperCase()+ '___END_____________________'+date_time);
     };
     static error = (title,str) => {
-        let date_time = DateTime.get_date(DateTime.get(),{format:'D-MMMM-YYYY-h:mm a'});
+        let date_time = DateTime.get_date(DateTime.get(),{format:'h:mm-a-D-MMMM-YYYY'});
         if(!str){
             str='null';
         }
@@ -148,10 +148,10 @@ class Obj {
     static check_is_array = (obj) =>{
         return Array.isArray(obj);
     }
-    static check_is_object(value) {
+    static check_is_object = (value) =>{
         return value === null || (typeof value !== 'object' && typeof value !== 'function');
     }
-    static check_is_value(value) {
+    static check_is_value = (value) =>{
         return value !== Object(value);
     }
     static get_distinct = (src_list, distinct_field) => {
@@ -355,7 +355,7 @@ class Str {
         }
         return is_true;
     };
-    static check_has_alpha(str) {
+    static check_has_alpha = (str) =>{
         // This regex will return true if it finds at least one alpha character
         const alphaRegex = /[a-zA-Z]/;
         return alphaRegex.test(str);
