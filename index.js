@@ -181,6 +181,12 @@ class Str {
     static get_cent = (n) => {
         return  parseInt((Number(number)*100)).toString();
     };
+    static get_plural = (str) => {
+        if(!str){
+            str='';
+        }
+        return str + "s";
+    }
     static get_title = (str,plural) => {
         if(!str){
             str='';
