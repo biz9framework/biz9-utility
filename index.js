@@ -320,13 +320,12 @@ class Str {
         }
         return "$"+n.toFixed(2).replace(/\d(?=(\d{3})+\.)/g, "$&,");
     };
-    static get_file_type_from_base64 = (base64) => {
+    static get_file_type_from_base64 = (base64Data) => {
         if(!base64Data){
             base64Data="";
         }
         const regex = /^data:([a-zA-Z0-9]+\/[a-zA-Z0-9-.+]+)(;charset=[a-zA-Z0-9-]+)?(;base64)?,/;
         const matches = base64Data.match(regex);
-
         if (matches && matches.length >= 2) {
             const mimeType = matches[1]; // e.g., "image/png"
             const parts = mimeType.split('/');
