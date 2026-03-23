@@ -17,7 +17,7 @@ describe("connect", () => {
         series([
             function(call) {
                 console.log('CONNECT-START');
-                Log.w('check',Str.validate_username('aa'));
+                Log.w('check',Str.validate_email('ssfsfdgmail.com'));
                 //var prettydate = require("pretty-date");
                 //console.log(DateTime.get_pretty(new Date("Fri Aug 23 2013 17:30:34 GMT+0200 (EET)")));
                 //console.log(DateTime.get_pretty(new Date("2026-03-08T20:28:17.588Z")));

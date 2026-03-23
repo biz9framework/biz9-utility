@@ -260,10 +260,14 @@ class Str {
     };
     static validate_email = (email) => {
         if(!email){
-            email = '';
+            return 'Email is not valid';
         }
         const re = /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
-        return re.test(String(email).toLowerCase());
+        if(!re.test(String(email).toLowerCase())){
+            return 'Email is not valid.';
+        }else{
+            return true;
+        }
     };
     static validate_username = (username) => {
         if(!username){
