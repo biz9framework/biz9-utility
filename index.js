@@ -15,6 +15,8 @@ class Status_Type{
 class Response_Field{
     static MESSAGES = 'messages';
     static STATUS = 'status';
+    static TYPE = 'type';
+
 }
 class Response_Logic{
     static get = () => {
@@ -138,14 +140,14 @@ class Obj {
     static filter = (field,value,items) => {
          return items.filter(item_find => item_find[field] === value);
     }
-    static sort_array_by_field = (items,sort_field,sort_type) => {
+    static sort_items_by_field = (items,sort_field,sort_type) => {
         if(!sort_type){
             sort_type='asc'; //asc, desc
         }
         if(sort_type=='asc'){
-            return item_array.sort((a, b) => a[sort_field].localeCompare(b[sort_field]));
+            return items.sort((a, b) => a[sort_field].localeCompare(b[sort_field]));
         }else{
-            return item_array.sort((a, b) => b[sort_field].localeCompare(a[sort_field]));
+            return items.sort((a, b) => b[sort_field].localeCompare(a[sort_field]));
         }
     }
     static merge = (obj1, obj2) => {
@@ -477,5 +479,5 @@ module.exports = {
     Str,
     Obj,
     Form,
-    DateTime,
+    DateTime
 };
