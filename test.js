@@ -5,7 +5,7 @@ License GNU General Public License v3.0
 Description: BiZ9 Framework: Test
 */
 const series = require('async-series');
-const {Number,DateTime,Log,Test,Form,Str,Obj} = require('.');
+const {Number,DateTime,Log,Test,Form,Str,Obj,Response_Logic} = require('.');
 const dayjs = require('dayjs');
 
 /* --- TEST CONFIG START --- */
@@ -17,7 +17,7 @@ describe("connect", () => {
         series([
             function(call) {
                 console.log('CONNECT-START');
-                Log.w('check',Str.validate_email('ssfsfdgmail.com'));
+                Log.w('cool',Response_Logic.get());
                 //var prettydate = require("pretty-date");
                 //console.log(DateTime.get_pretty(new Date("Fri Aug 23 2013 17:30:34 GMT+0200 (EET)")));
                 //console.log(DateTime.get_pretty(new Date("2026-03-08T20:28:17.588Z")));

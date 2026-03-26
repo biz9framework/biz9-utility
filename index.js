@@ -6,6 +6,21 @@ Description: BiZ9 Framework: Utility
 */
 const prettydate = require("pretty-date");
 const dayjs = require('dayjs');
+
+class Status_Type{
+    static OK = 'OK';
+    static FAILED = 'FAILED';
+}
+class Response_Field{
+    static MESSAGE = 'message';
+    static STATUS = 'status';
+
+}
+class Response_Logic{
+    static get = () => {
+        return {status:Status_Type.OK,message:''}
+    }
+}
 class Form{
     static set_item = (data_type,id,item_data,option) => {
         if(!data_type){
@@ -439,6 +454,9 @@ class DateTime {
 }
 module.exports = {
     Log,
+    Response_Logic,
+    Response_Field,
+    Status_Type,
     Num,
     Str,
     Obj,
