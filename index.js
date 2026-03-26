@@ -132,7 +132,13 @@ class Num {
     };
 }
 class Obj {
-    static sort_array_by_field = (items, sort_field,sort_type) => {
+    static find = (field,value,items) => {
+         return items.find(item_find => item_find[field] === value);
+    }
+    static filter = (field,value,items) => {
+         return items.filter(item_find => item_find[field] === value);
+    }
+    static sort_array_by_field = (items,sort_field,sort_type) => {
         if(!sort_type){
             sort_type='asc'; //asc, desc
         }
@@ -181,6 +187,7 @@ class Obj {
             index === self.findIndex((t) => t[distinct_field] === obj[distinct_field])
         );
     }
+
 }
 class Str {
     static print_array = (items) => {
