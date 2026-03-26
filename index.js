@@ -8,17 +8,29 @@ const prettydate = require("pretty-date");
 const dayjs = require('dayjs');
 
 class Status_Type{
+    static FAIL = 'FAIL';
     static OK = 'OK';
-    static FAILED = 'FAILED';
+    static SUCCESS = 'SUCCESS';
 }
 class Response_Field{
-    static MESSAGE = 'message';
+    static MESSAGES = 'messages';
     static STATUS = 'status';
-
 }
 class Response_Logic{
     static get = () => {
-        return {status:Status_Type.OK,message:''}
+        return {status:Status_Type.OK,messages:[]};
+    }
+    static get_message = (type,status,message) => {
+        return {type:type,status:status,message:message};
+    }
+    static get_status = (response) => {
+        response.status = Status_Type.SUCCESS;
+        for(const message of response.messages){
+            if(message.status == Status_Type.FAIL){
+                response.status = Status_Type.FAIL;
+            }
+        }
+        return response;
     }
 }
 class Form{
@@ -44,12 +56,6 @@ class Form{
             }
         }
         return item;
-    };
-    static set_item_list = (data_type,item_list_data) => {
-        for (a=0;a<item_list_data.length;a++){
-            item_list_data['data_type']=data_type;
-        }
-        return item_list_data;
     };
 }
 class Log{
@@ -126,14 +132,14 @@ class Num {
     };
 }
 class Obj {
-    static sort_list_by_field = (item_list, sort_field,sort_type) => {
+    static sort_array_by_field = (items, sort_field,sort_type) => {
         if(!sort_type){
             sort_type='asc'; //asc, desc
         }
         if(sort_type=='asc'){
-            return item_list.sort((a, b) => a[sort_field].localeCompare(b[sort_field]));
+            return item_array.sort((a, b) => a[sort_field].localeCompare(b[sort_field]));
         }else{
-            return item_list.sort((a, b) => b[sort_field].localeCompare(a[sort_field]));
+            return item_array.sort((a, b) => b[sort_field].localeCompare(a[sort_field]));
         }
     }
     static merge = (obj1, obj2) => {
@@ -151,7 +157,7 @@ class Obj {
         }
         return is_null;
     };
-    static check_has_list = (obj) =>{
+    static check_has_array = (obj) =>{
         for (const key in obj) {
             if (Object.prototype.hasOwnProperty.call(obj, key)) {
                 if (Array.isArray(obj[key])) {
@@ -170,13 +176,16 @@ class Obj {
     static check_is_value = (value) =>{
         return value !== Object(value);
     }
-    static get_distinct = (src_list, distinct_field) => {
-        return src_list.filter((obj, index, self) =>
+    static get_distinct = (src_items, distinct_field) => {
+        return src_items.filter((obj, index, self) =>
             index === self.findIndex((t) => t[distinct_field] === obj[distinct_field])
         );
     }
 }
 class Str {
+    static print_array = (items) => {
+        return items.toString();
+    };
     static get_guid = () => {
         return 'xxxxxxxx-xxxx-4xxx-yxxx-xxxxxxxxxxxx'.replace(/[xy]/g, function(c) {
             let r = Math.random() * 16 | 0, v = c == 'x' ? r : (r & 0x3 | 0x8);
