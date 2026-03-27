@@ -26,11 +26,13 @@ class Response_Logic{
         return {type:type,status:status,message:message};
     }
     static get_status = (response) => {
-        response.status = Status_Type.SUCCESS;
-        for(const message of response.messages){
-            if(message.status == Status_Type.FAIL){
-                response.status = Status_Type.FAIL;
-            }
+        let item_match = Obj.find(Response_Field.STATUS,Status_Type.FAIL,response.messages);
+        if(item_match){
+            response.status = Obj.find(Response_Field.STATUS,Status_Type.FAIL,response.messages).status;
+            response.message = Obj.find(Response_Field.STATUS,Status_Type.FAIL,response.messages).message;
+        }else{
+            response.status = Obj.find(Response_Field.STATUS,Status_Type.SUCCESS,response.messages).status;
+            response.message = Obj.find(Response_Field.STATUS,Status_Type.SUCCESS,response.messages).message;
         }
         return response;
     }
