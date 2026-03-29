@@ -16,7 +16,25 @@ class Response_Field{
     static MESSAGES = 'messages';
     static STATUS = 'status';
     static TYPE = 'type';
-
+    static PARAM_APP_ID = 'param_app_id';
+    static PARAM_TABLE = 'param_table';
+    static PARAM_ID = 'param_id';
+    static PARAM_PARENT_ID = 'param_parent_id';
+    static PARAM_PARENT_TABLE = 'param_parent_table';
+    static PARAM_USER_ID = 'param_user_id';
+    static PARAM_DATA = 'param_data';
+    static PARAM_OPTION = 'param_option';
+    static PARAM_SEARCH = 'param_search';
+    static PARAM_SORT_BY = 'param_sort_by';
+    static PARAM_PAGE_CURRENT = 'param_page_current';
+    static PARAM_PAGE_SIZE = 'param_page_size';
+    static RESPONSE_RESULT = 'param_response_result';
+    static DELETE_CONFIRM = 'delete_confirm';
+    static DELETE_FAIL = 'delete_fail';
+    static GET_CONFIRM = 'get_confirm';
+    static GET_FAIL = 'get_fail';
+    static POST_CONFIRM = 'post_confirm';
+    static POST_FAIL = 'post_fail';
 }
 class Response_Logic{
     static get = () => {
@@ -26,13 +44,18 @@ class Response_Logic{
         return {type:type,status:status,message:message};
     }
     static get_status = (response) => {
-        let item_match = Obj.find(Response_Field.STATUS,Status_Type.FAIL,response.messages);
-        if(item_match){
+        let item_match_fail = Obj.find(Response_Field.STATUS,Status_Type.FAIL,response.messages);
+        if(item_match_fail){
             response.status = Obj.find(Response_Field.STATUS,Status_Type.FAIL,response.messages).status;
             response.message = Obj.find(Response_Field.STATUS,Status_Type.FAIL,response.messages).message;
-        }else{
+        }
+        let item_match_success = Obj.find(Response_Field.STATUS,Status_Type.SUCCESS,response.messages);
+        if(item_match_success){
             response.status = Obj.find(Response_Field.STATUS,Status_Type.SUCCESS,response.messages).status;
             response.message = Obj.find(Response_Field.STATUS,Status_Type.SUCCESS,response.messages).message;
+        }
+        if(!item_match_fail && !item_match_success){
+            response.status =  Status_Type.OK;
         }
         return response;
     }
