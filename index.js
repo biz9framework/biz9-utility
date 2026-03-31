@@ -43,19 +43,50 @@ class Response_Logic{
     static get_message = (type,status,message) => {
         return {type:type,status:status,message:message};
     }
+
+    static get_message_response_result = (type,status,message) => {
+        console.log('44444444444');
+         let response=Response_Logic.get();
+        let message_response_result = [];
+
+        console.log('555555555555');
+        for(let value in message){
+            response.messages.push(Response_Logic.get_message(type,status,value));
+        }
+        Log.w('555bb',response);
+
+        console.log('666666666');
+        response =  get_status(response);
+        Log.w('666_response',response);
+        console.log('777777777');
+        return {type:response.type,status:response.status,message:response.message,message_response_result:response.messages};
+    }
+
     static get_status = (response) => {
         let item_match_fail = Obj.find(Response_Field.STATUS,Status_Type.FAIL,response.messages);
+        let item_match_success = {};
+        let item_match_ok = {};
         if(item_match_fail){
-            response.status = Obj.find(Response_Field.STATUS,Status_Type.FAIL,response.messages).status;
-            response.message = Obj.find(Response_Field.STATUS,Status_Type.FAIL,response.messages).message;
+            response.status = item_match_fail.status;
+            response.message = Str.check_is_null(item_match_fail.message) ? '' : item_match_fail.message;
         }
-        let item_match_success = Obj.find(Response_Field.STATUS,Status_Type.SUCCESS,response.messages);
-        if(item_match_success){
-            response.status = Obj.find(Response_Field.STATUS,Status_Type.SUCCESS,response.messages).status;
-            response.message = Obj.find(Response_Field.STATUS,Status_Type.SUCCESS,response.messages).message;
+        if(!item_match_fail){
+            item_match_success = Obj.find(Response_Field.STATUS,Status_Type.SUCCESS,response.messages);
+            if(item_match_success){
+                response.status = item_match_success.status;
+                response.message = Str.check_is_null(item_match_success.message) ? '' : item_match_success.message;
+            }
         }
         if(!item_match_fail && !item_match_success){
+            item_match_ok = Obj.find(Response_Field.STATUS,Status_Type.OK,response.messages);
+            if(item_match_ok){
+                response.status =  item_match_ok.status;
+                response.message =  Str.check_is_null(item_match_ok.message) ? '' : item_match_ok.message;
+            }
+        }
+        if(!item_match_fail && !item_match_success && !item_match_ok){
             response.status =  Status_Type.OK;
+            response.message =  '';
         }
         return response;
     }
@@ -214,7 +245,6 @@ class Obj {
             index === self.findIndex((t) => t[distinct_field] === obj[distinct_field])
         );
     }
-
 }
 class Str {
     static print_array = (items) => {
