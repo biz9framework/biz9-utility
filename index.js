@@ -37,31 +37,23 @@ class Response_Field{
     static POST_FAIL = 'post_fail';
 }
 class Response_Logic{
-    static get = () => {
+   static get_response = () => {
         return {status:Status_Type.OK,messages:[]};
     }
+    static get = () => {
+        return Response_Logic.get_response({status:Status_Type.OK,messages:[]});
+    }
+    static get_response_by_response = (status,type,message) => {
+        return {status:status,type:type,message:message};
+        /*
+        const message_items = [];
+        return {status:status,type:type,message: [...message_items, ...message]};
+        */
+    }
+
     static get_message = (type,status,message) => {
         return {type:type,status:status,message:message};
     }
-
-    static get_message_response_result = (type,status,message) => {
-        console.log('44444444444');
-         let response=Response_Logic.get();
-        let message_response_result = [];
-
-        console.log('555555555555');
-        for(let value in message){
-            response.messages.push(Response_Logic.get_message(type,status,value));
-        }
-        Log.w('555bb',response);
-
-        console.log('666666666');
-        response =  get_status(response);
-        Log.w('666_response',response);
-        console.log('777777777');
-        return {type:response.type,status:response.status,message:response.message,message_response_result:response.messages};
-    }
-
     static get_status = (response) => {
         let item_match_fail = Obj.find(Response_Field.STATUS,Status_Type.FAIL,response.messages);
         let item_match_success = {};
