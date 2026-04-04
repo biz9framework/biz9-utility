@@ -45,7 +45,7 @@ class Response_Logic{
         return {type:type,status:status,message:message,title:title};
     }
     static get_status = (response) => {
-        let item_match_fail = Obj.find(Response_Field.STATUS,Status_Type.FAIL,response.messages);
+        let item_match_fail = Obj.findLast(Response_Field.STATUS,Status_Type.FAIL,response.messages);
         let item_match_success = {};
         let item_match_ok = {};
         if(item_match_fail){
@@ -53,14 +53,14 @@ class Response_Logic{
             response.message = Str.check_is_null(item_match_fail.message) ? '' : item_match_fail.message;
         }
         if(!item_match_fail){
-            item_match_success = Obj.find(Response_Field.STATUS,Status_Type.SUCCESS,response.messages);
+            item_match_success = Obj.findLast(Response_Field.STATUS,Status_Type.SUCCESS,response.messages);
             if(item_match_success){
                 response.status = item_match_success.status;
                 response.message = Str.check_is_null(item_match_success.message) ? '' : item_match_success.message;
             }
         }
         if(!item_match_fail && !item_match_success){
-            item_match_ok = Obj.find(Response_Field.STATUS,Status_Type.OK,response.messages);
+            item_match_ok = Obj.findLast(Response_Field.STATUS,Status_Type.OK,response.messages);
             if(item_match_ok){
                 response.status =  item_match_ok.status;
                 response.message =  Str.check_is_null(item_match_ok.message) ? '' : item_match_ok.message;
