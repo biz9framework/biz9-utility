@@ -350,7 +350,7 @@ class Str {
             username = '';
         }
         const minLength = 3;
-        const maxLength = 15;
+        const maxLength = 31;
         if (username.length < minLength || username.length > maxLength) {
             return "Username must be between " + minLength + " and " + maxLength + " characters long.";
         }
